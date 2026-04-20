@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>TravelBloom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">TravelBloom</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="searchRecommendations()">Search</button>
+        <button onclick="clearResults()">Reset</button>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Discover Your Next Destination</h1>
+        <p>Find beaches, temples, and countries to explore around the world.</p>
+        <button class="btn">Book Now</button>
+    </div>
+</section>
+
+<section id="results"></section>
+
+<script src="travel_recommendation.js"></script>
+</body>
+</html>

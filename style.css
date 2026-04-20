@@ -1,6 +1,9 @@
-body {
+/* RESET */
+* {
     margin: 0;
-    font-family: Arial;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 /* NAVBAR */
@@ -8,77 +11,98 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background: #0a3d62;
+    padding: 15px 40px;
+    background: rgba(10, 61, 98, 0.9);
     color: white;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
 }
 
 .logo {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 }
 
 .nav-links a {
-    margin: 0 10px;
+    margin: 0 15px;
     color: white;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-/* HOME SECTION */
-.home {
-    height: 100vh;
-    background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    color: white;
-    padding: 50px;
+.nav-links a:hover {
+    color: #f39c12;
 }
 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.4);
-    top: 0;
-    left: 0;
-}
-
-.home-content {
-    position: relative;
-    max-width: 500px;
-}
-
-.book-btn {
-    padding: 10px 15px;
-    background: #e67e22;
+/* SEARCH */
+.search-box input {
+    padding: 7px;
+    border-radius: 6px;
     border: none;
+}
+
+.search-box button {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    margin-left: 5px;
+    background: #f39c12;
     color: white;
-    margin-block: 10px;
     cursor: pointer;
 }
 
-/* SOCIAL ICONS */
-.socials a {
+/* HERO SECTION */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     color: white;
-    font-size: 20px;
-    margin-right: 10px;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+    background: #f39c12;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
 }
 
 /* RESULTS GRID */
-.results-grid {
+#results {
+    padding: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;
 }
 
-/* CARD STYLE */
+/* CARD */
 .card {
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card img {
@@ -93,23 +117,16 @@ body {
 
 .card p {
     margin: 10px;
+    color: #555;
 }
 
-.about-section {
+/* ABOUT PAGE */
+.about {
     padding: 60px 20px;
     text-align: center;
-    background: #f5f6fa;
 }
 
-.about-text {
-    max-width: 700px;
-    margin: auto;
-    color: #444;
-    line-height: 1.6;
-}
-
-/* TEAM */
-.team-container {
+.team {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -120,81 +137,37 @@ body {
 .team-card {
     background: white;
     padding: 20px;
-    width: 200px;
+    width: 220px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
 }
 
-.team-card:hover {
-    transform: translateY(-5px);
-}
-
-.team-card i {
-    font-size: 30px;
-    color: #0a3d62;
-    margin-bottom: 10px;
-}
-
-.contact-section {
+/* CONTACT PAGE */
+.contact {
     padding: 60px 20px;
     text-align: center;
-    background: #ffffff;
 }
 
-.contact-text {
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* FORM */
-.contact-form {
-    max-width: 500px;
+.contact form {
+    max-width: 400px;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
 }
 
-/* INPUT BOXES */
-.input-group {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 8px;
-    background: #f9f9f9;
-}
-
-.input-group i {
-    margin-right: 10px;
-    color: #0a3d62;
-}
-
-.input-group input,
-.input-group textarea {
+.contact input,
+.contact textarea {
     width: 100%;
-    border: none;
-    outline: none;
-    background: transparent;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-textarea {
-    resize: none;
-    height: 100px;
-}
-
-/* BUTTON */
-.contact-form button {
-    background: #0a3d62;
-    color: white;
+.contact button {
+    width: 100%;
     padding: 12px;
     border: none;
+    background: #0a3d62;
+    color: white;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-.contact-form button:hover {
-    background: #07416b;
 }
