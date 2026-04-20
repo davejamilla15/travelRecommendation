@@ -18,23 +18,33 @@ function searchRecommendations() {
 
     let matches = [];
 
-    // Normalize keyword handling
+    // BEACH
     if (input.includes("beach")) {
         matches = travelData.beaches;
     }
+
+    // TEMPLE
     else if (input.includes("temple")) {
         matches = travelData.temples;
     }
+
+    // COUNTRY → GET ALL CITIES
     else if (input.includes("country")) {
-        matches = travelData.countries;
+
+        travelData.countries.forEach(country => {
+            country.cities.forEach(city => {
+                matches.push(city);
+            });
+        });
     }
 
-    if (!matches || matches.length === 0) {
+    // NO RESULTS
+    if (matches.length === 0) {
         results.innerHTML = "<p>No results found.</p>";
         return;
     }
 
-    // Display results
+    // DISPLAY RESULTS
     matches.forEach(place => {
         const div = document.createElement("div");
         div.className = "card";
